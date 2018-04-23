@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<button id="leakButton">LEAK</button>
+<script>
+  var leakButton = document.getElementById('leakButton')
+
+  function leak() {
+    for(var i = 0; i <= 10000; i++) {
+      setTimeout(function () {
+        console.log('hello')
+        test = []
+      }, 3000)
+    }
+  }
+
+  function click() {
+    leak()
+  }
+
+  leakButton.addEventListener('click', click)
+</script>
+</body>
+</html>
